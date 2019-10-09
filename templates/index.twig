@@ -1,0 +1,119 @@
+{% extends '_layout.twig' %}
+
+{% block profil %}
+  <div>
+  	<div class="uk-card profil">
+  	  {% for item in profil %}
+  	  	<div class="uk-card-media-top">
+  	  	  <img src="{{ item.foto }}">
+  	  	</div>
+  	  	<div class="uk-card-body">
+  	  	  <h3 class="uk-card-title uk-text-center">{{ item.nama }}</h3>
+  	  	  <p>Halo, perkenalkan namaku {{ item.nama }}, biasa dipanggil {{ item.panggilan }}. Aku lahir pada tanggal {{ item.lahir }}. Sekarang aku tinggal di {{ item.alamat }}. Hobiku adalah {{ item.hobi }}.</p>
+  	  	  <p>{{ item.quote }}</p>
+  	  	</div>
+  	  {% endfor %}
+  	</div>
+  </div>
+{% endblock %}
+
+{% block skill %}
+  <h1>Keahlian</h1>
+    {% for item in keahlian %}
+      <p>{{ item.keahlian }}</p>
+      <div class="container">
+        <div class="skills {{ item.skill }}" style="width: {{ item.persen }}">
+          {{ item.persen }}
+        </div>
+      </div>
+    {% endfor %}
+  <hr>
+{% endblock %}
+
+{% block pendidikan %}
+  <h1>Riwayat Pendidikan</h1>
+    {% for item in edukasi %}
+  	  <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+        <div class="uk-card-media-left uk-cover-container">
+	      <img src="{{ item.gambar }}" alt="" uk-cover>
+	      <canvas width="600" height="400"></canvas>
+	    </div>
+	    <div>
+	      <div class="uk-card-body">
+	        <h3 class="uk-card-title">{{ item.tahun }}</h3>
+		    <p>{{ item.sekolah }}</p>
+		    <p>{{ item.lokasi }}</p>
+	      </div>
+	    </div>
+      </div>
+    {% endfor %}
+  <hr>
+{% endblock %}
+
+{% block portofolio %}
+  <h1>Portfolio</h1>
+	<div class="uk-grid" uk-grid>
+	  {% for item in portofolio %}
+	  	<div class="uk-text-center">
+	  	  <a href="portofolio.php?id={{ item.id }}">
+	  	  	<img src="{{ item.bigpic }}" style="width: 300px; height: 150px;">
+	  	  </a>
+	  	  <h3 style="margin-top: 5px;">{{ item.judul }}</h3>
+	  	</div>
+	  {% endfor %}
+	</div>
+  <hr>
+{% endblock %}
+
+{% block contact %}
+  <h1>Hubungi Aku</h1>
+	<form class="uk-form-horizontal uk-margin-large" action="thanks.php" method="post">
+	{# nama #}
+	<div class="uk-margin">
+	  <label class="uk-form-label" for="form-horizontal-text">Nama</label>
+	  <div class="uk-form-controls">
+	    <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Nama anda" name="nama" data-validation="length" data-validation-length="min2">
+	  </div>
+	</div>
+	{# email #}
+	<div class="uk-margin">
+	  <label class="uk-form-label" for="form-horizontal-text">Email</label>
+	  <div class="uk-form-controls">
+	    <input class="uk-input" id="form-horizontal-text" type="email" placeholder="Email@mail.com" name="email" data-validation="email" data-validation-length="min4">
+	  </div>
+	</div>
+	{# gender #}
+	<div class="uk-margin">
+	  <label class="uk-form-label">Jenis Kelamin (opsional)</label>
+	  <div class="uk-form-controls uk-form-controls-text">
+	    <label><input class="uk-radio" type="radio" name="radio1" value="You're such a great Guy"> Laki-laki</label><br>
+	    <label><input class="uk-radio" type="radio" name="radio1" value="You're such a nice Girl"> Perempuan</label>      
+	  </div>
+	</div>
+	{# pesan #}
+	<div class="uk-margin">
+	  <textarea class="uk-textarea" rows="5" placeholder="Pesan anda"></textarea>
+	</div>
+	{# kirim #}
+	<div class="uk-margin">
+	  <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Kirim</button>
+	</div>
+	{# sosmed #}
+	<div class="uk-text-center">
+	  <h4>Atau melalui</h4>
+	  <div class="uk-flex uk-flex-center">
+		{% for item in sosmed %}
+		  <div class="uk-margin-right uk-margin-left">
+			<a href="{{ item.link }}" target="_blank"><img src="{{ item.ikon }}" width="40px"></a>
+		  </div>
+		{% endfor %}
+	  </div>
+	</div>
+	</form>
+{% endblock %}
+
+{% block copyright %}
+  <div>
+	<p style="text-align: center; font-size: 15px;">Copyright &copy; 2019-Now by Rama</p>
+  </div>
+{% endblock %}

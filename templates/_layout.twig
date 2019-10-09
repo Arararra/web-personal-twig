@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Personal Twig</title>
+  <link rel="stylesheet" href="assets/libs/uikit/css/uikit.css">
+  <link rel="stylesheet" href="assets/libs/custom/customv2.css">
+  <link rel="stylesheet" href="assets/libs/lightbox/css/lightbox.css">
+</head>
+<body background="assets/media/img/pattern-bg.png">
+  <div class="uk-container">
+  	<div class="uk-card uk-card-default uk-margin-top uk-margin-bottom">
+  	  <div class="uk-grid-collapse uk-child-width-expand@s uk-margin-large-top" uk-grid>
+  		<!-- isi -->
+    		  {% block profil %}
+    		  {% endblock %}
+    		  
+    		  <div class="uk-padding kanan">
+    		  	{% block skill %}
+    		  	{% endblock %}
+
+    		  	{% block pendidikan %}
+    		  	{% endblock %}
+
+            {% block portofolio %}
+            {% endblock %}
+
+            {% block contact %}
+            {% endblock %}
+  		  </div>
+    		<!-- end isi -->
+  	  </div>
+  	</div>
+  </div>
+
+  {% block copyright %}
+  {% endblock %}
+
+  <script src="assets/libs/uikit/js/uikit.js"></script>
+  <script src="assets/libs/uikit/js/uikit-icons.js"></script>
+  <script src="assets/libs/lightbox/js/lightbox-plus-jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+  <script>
+	$.validate({
+	  lang: 'en'
+	});
+  </script>
+</body>
+</html>
