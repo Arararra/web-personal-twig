@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Personal Twig</title>
+  <link rel="stylesheet" href="assets/libs/uikit/css/uikit.css">
+  <link rel="stylesheet" href="assets/libs/lightbox/css/lightbox.css">
+  <style type="text/css">
+    @media only screen and (min-width: 600px){
+      .width{
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  {% for get in gets %}
+  {% for item in portofolio if item.id == get.id %}
+    <div class="uk-container uk-margin-top uk-margin-bottom">
+    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+      <div class="uk-card-media-left uk-cover-container">
+        <a href="{{ item.bigpic }}" data-lightbox="galeri" data-title="{{ item.bigcaption }}">
+          <img src="{{ item.bigpic }}" uk-cover>
+        </a>
+        <canvas width="600" height="400"></canvas>
+      </div>
+      <div class="uk-card-body">
+        <h3 class="uk-card-title">{{ item.judul }}</h3>
+        {% for label in item.label %}
+          <div class="uk-label">{{ label }}</div>
+        {% endfor %}
+        <p>{{ item.deskripsi }}</p>
+        <P>Completed: {{ item.selesai }}</P>
+        <a class="uk-button uk-button-default" onclick="window.history.back(-1);">back to Index</a><br><br>
+        {% for gambar in item.smallpic %}
+          {% for caption in item.smallcaption %}
+            <a href="{{ gambar }}" data-lightbox="galeri" data-title="{{ caption }}">
+              <img class="width" src="{{ gambar }}">
+            </a>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+  {% else %}
+    <div class="uk-container uk-margin-top" style="left: 50%; padding-top: 250px; transform: translate(-50% -50%);">
+    <div class="uk-card uk-body uk-card-default">
+      <div class="uk-child-width-1-2@m" uk-grid>
+        <div class="uk-card-body uk-card-default uk-position-center">
+          <a class="uk-close-large uk-modal-close-default" type="button" onClick="javascript:history.go(-1)" uk-close></a>
+          <div class="uk-text-center">
+            <hr style="display: none;">
+            <p>Akses ditolak. Tekan tombol silang untuk kembali ke index.php</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  {% endfor %}
+  {% endfor %}
+
+  <script src="assets/libs/uikit/js/uikit.js"></script>
+  <script src="assets/libs/uikit/js/uikit-icons.js"></script>
+  <script src="assets/libs/lightbox/js/lightbox-plus-jquery.js"></script>
+</body>
+</html>

@@ -45,6 +45,18 @@ echo $twig->render('index.twig', [
       'skill' => 'blue',
     ],
   ],
+'portofolio' => [
+    [
+      'judul' => 'Web Registrasi',
+      'bigpic' => 'assets\media\img\portofolio\form.png',
+      'id' => '0',
+    ],
+    [
+      'judul' => 'Web Start Up',
+      'bigpic' => 'assets\media\img\portofolio\homecafe.png',
+      'id' => '1',
+    ],
+  ],
 'edukasi' => [
     [
       'tahun' => '2009-2015',
@@ -63,30 +75,6 @@ echo $twig->render('index.twig', [
       'sekolah' => 'SMK Negeri 2 Surabaya',
       'lokasi' => 'Surabaya, Indonesia',
       'gambar' => 'assets/media/img/smkn2.jpg',
-    ],
-  ],
-'portofolio' => [
-    [
-      'label' => ['PHP','HTML','CSS'],
-      'judul' => 'Web Registrasi',
-      'galeri' => 'database',
-      'bigpic' => 'assets\media\img\portofolio\form.png',
-      'bigcaption' => '',
-      'smallpic' => ['assets\media\img\portofolio\afterform.png','assets\media\img\portofolio\tabel.png'],
-      'smallcaption' => ['',''],
-      'selesai' => '17 Juli 2019',
-      'id' => '0',
-    ],
-    [
-      'label' => ['HTML','CSS'],
-      'judul' => 'Web Start Up',
-      'galeri' => 'cafe',
-      'bigpic' => 'assets\media\img\portofolio\homecafe.png',
-      'bigcaption' => '',
-      'smallpic' => ['assets\media\img\portofolio\aboutcafe.png','assets\media\img\portofolio\menucafe.png','assets\media\img\portofolio\contactcafe.png'],
-      'smallcaption' => ['','',''],
-      'selesai' => '17 Juli 2019',
-      'id' => '0',
     ],
   ],
 'sosmed' => [
