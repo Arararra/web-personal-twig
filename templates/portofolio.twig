@@ -33,11 +33,9 @@
         <P>Completed: {{ item.selesai }}</P>
         <a class="uk-button uk-button-default" onclick="window.history.back(-1);">back to Index</a><br><br>
         {% for gambar in item.smallpic %}
-          {% for caption in item.smallcaption %}
-            <a href="{{ gambar }}" data-lightbox="galeri" data-title="{{ caption }}">
-              <img class="width" src="{{ gambar }}">
-            </a>
-          {% endfor %}
+          <a href="{{ gambar }}" data-lightbox="galeri" data-title="{{ item.smallcaption[loop.index0] }}">
+            <img class="width" src="{{ gambar }}">
+          </a>
         {% endfor %}
       </div>
     </div>
