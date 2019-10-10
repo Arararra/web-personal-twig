@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>thanks</title>
+  <link rel="stylesheet" href="assets/libs/uikit/css/uikit.css">
+</head>
+<body>
+  {% for item in post %}
+  {% if item.isnama and item.isemail %}
+  	<div class="uk-container uk-margin-top" style="left: 50%; padding-top: 250px; transform: translate(-50% -50%);">
+    <div class="uk-card uk-body uk-card-default">
+      <div class="uk-child-width-1-2@m" uk-grid>
+        <div class="uk-card-body uk-card-default uk-position-center">
+          <a class="uk-close-large uk-modal-close-default" type="button" uk-close onClick="javascript:history.go(-1)"></a>
+          <div class="uk-text-center">
+            <h3 class="uk-card-title">Terima Kasih</h3>
+              {% for item in var %}
+              	<p>Terima kasih <b>{{ item.nama }}</b>, Aku akan membalas pesanmu melalui <b>{{ item.email }}</b>.<br></p>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  	</div>
+  {% else %}
+  	<div class="uk-container uk-margin-top" style="left: 50%; padding-top: 250px; transform: translate(-50% -50%);">
+    <div class="uk-card uk-body uk-card-default">
+      <div class="uk-child-width-1-2@m" uk-grid>
+        <div class="uk-card-body uk-card-default uk-position-center">
+          <a class="uk-close-large uk-modal-close-default" type="button" uk-close onClick="javascript:history.go(-1)"></a>
+          <div class="uk-text-center">
+          	<hr style="display: none;">
+            <p>Akses ditolak. Tekan tombol silang untuk kembali ke index.php</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  	</div>
+  {% endif %}
+  {% endfor %}
+
+  <script src="assets/libs/uikit/js/uikit.js"></script>
+  <script src="assets/libs/uikit/js/uikit-icons.js"></script>
+</body>
+</html>
