@@ -3,16 +3,14 @@
 {% block profil %}
   <div>
   	<div class="uk-card profil">
-  	  {% for item in profil %}
-  	  	<div class="uk-card-media-top">
-  	  	  <img src="{{ item.foto }}">
-  	  	</div>
-  	  	<div class="uk-card-body">
-  	  	  <h3 class="uk-card-title uk-text-center">{{ item.nama }}</h3>
-  	  	  <p>Halo, perkenalkan namaku {{ item.nama }}, biasa dipanggil {{ item.panggilan }}. Aku lahir pada tanggal {{ item.lahir }}. Sekarang aku tinggal di {{ item.alamat }}. Hobiku adalah {{ item.hobi }}.</p>
-  	  	  <p>{{ item.quote }}</p>
-  	  	</div>
-  	  {% endfor %}
+  	  <div class="uk-card-media-top">
+  	    <img src="{{ foto }}">
+  	  </div>
+  	  <div class="uk-card-body">
+  	    <h3 class="uk-card-title uk-text-center">{{ nama }}</h3>
+  	    <p>Halo, perkenalkan namaku {{ nama }}, biasa dipanggil {{ panggilan }}. Aku lahir pada tanggal {{ lahir }}. Sekarang aku tinggal di {{ alamat }}. Hobiku adalah {{ hobi }}.</p>
+  	    <p>{{ quote }}</p>
+  	  </div>
   	</div>
   </div>
 {% endblock %}

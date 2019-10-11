@@ -2,17 +2,13 @@
 include "header.php";
 
 echo $twig->render('index.twig', [
-'profil' => [
-    [
-      'nama' => 'M. Rama Maulana',
-      'panggilan' => 'Rama',
-      'lahir' => '09 Oktober 2002',
-      'alamat' => 'Jl. Tanah Merah Sayur 4 no. 32',
-      'foto' => 'assets/media/img/foto.jpg',
-      'hobi' => 'main game, koding, dan mendengarkan musik',
-      'quote' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-    ],
-  ],
+'nama' => 'M. Rama Maulana',
+'panggilan' => 'Rama',
+'lahir' => '09 Oktober 2002',
+'alamat' => 'Jl. Tanah Merah Sayur 4 no. 32',
+'foto' => 'assets/media/img/foto.jpg',
+'hobi' => 'main game, koding, dan mendengarkan musik',
+'quote' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercition.',
 'keahlian' => [
     [
       'keahlian' => 'C++',
