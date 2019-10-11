@@ -45,10 +45,13 @@
     <div class="uk-card uk-body uk-card-default">
       <div class="uk-child-width-1-2@m" uk-grid>
         <div class="uk-card-body uk-card-default uk-position-center">
-          <a class="uk-close-large uk-modal-close-default" type="button" onClick="javascript:history.go(-1)" uk-close></a>
           <div class="uk-text-center">
-            <hr style="display: none;">
-            <p>Akses ditolak. Tekan tombol silang untuk kembali ke index.php</p>
+            <p>Akses ditolak. Anda akan diarahkan ke index.php dalam 4 detik.</p>
+            <script>
+              setTimeout(function(){
+                window.location.href = 'index.php';
+              }, 4000);
+            </script>
           </div>
         </div>
       </div>

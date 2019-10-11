@@ -8,9 +8,9 @@ echo $twig->render('index.twig', [
       'panggilan' => 'Rama',
       'lahir' => '09 Oktober 2002',
       'alamat' => 'Jl. Tanah Merah Sayur 4 no. 32',
-      'foto' => 'assets/media/img/img-profile.jpg',
+      'foto' => 'assets/media/img/foto.jpg',
       'hobi' => 'main game, koding, dan mendengarkan musik',
-      'quote' => 'Never gonna give you up, never gonna let you down, never gonna run around and desert you, never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you.',
+      'quote' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
     ],
   ],
 'keahlian' => [
