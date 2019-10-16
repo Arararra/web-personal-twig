@@ -1,39 +1,25 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Personal Twig</title>
-  <link rel="stylesheet" href="assets/libs/uikit/css/uikit.css">
-  <link rel="stylesheet" href="assets/libs/lightbox/css/lightbox.css">
-  <style type="text/css">
-    @media only screen and (min-width: 600px){
-      .width{
-        width: 200px;
-      }
-    }
-  </style>
-</head>
-<body>
-  {% for get in gets %}
-  {% for item in portofolio if item.id == get.id %}
-    <div class="uk-container uk-margin-top uk-margin-bottom">
+{% extends '_layout.twig' %}
+
+{% block content %}
+  {% if portfolio is not empty %}
+    <div class="uk-container">
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
       <div class="uk-card-media-left uk-cover-container">
-        <a href="{{ item.bigpic }}" data-lightbox="galeri" data-title="{{ item.bigcaption }}">
-          <img src="{{ item.bigpic }}" uk-cover>
+        <a href="{{ portfolio.bigpic }}" data-lightbox="galeri" data-title="{{ portfolio.bigcaption }}">
+          <img src="{{ portfolio.bigpic }}" uk-cover>
         </a>
         <canvas width="600" height="400"></canvas>
       </div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title">{{ item.judul }}</h3>
-        {% for label in item.label %}
+        <h3 class="uk-card-title">{{ portfolio.judul }}</h3>
+        {% for label in portfolio.label %}
           <div class="uk-label">{{ label }}</div>
         {% endfor %}
-        <p>{{ item.deskripsi }}</p>
-        <P>Completed: {{ item.selesai }}</P>
+        <p>{{ portfolio.deskripsi }}</p>
+        <P>Completed: {{ portfolio.selesai }}</P>
         <a class="uk-button uk-button-default" onclick="window.history.back(-1);">back to Index</a><br><br>
-        {% for gambar in item.smallpic %}
-          <a href="{{ gambar }}" data-lightbox="galeri" data-title="{{ item.smallcaption[loop.index0] }}">
+        {% for gambar in portfolio.smallpic %}
+          <a href="{{ gambar }}" data-lightbox="galeri" data-title="{{ portfolio.smallcaption[loop.index0] }}">
             <img class="width" src="{{ gambar }}">
           </a>
         {% endfor %}
@@ -41,12 +27,12 @@
     </div>
     </div>
   {% else %}
-    <div class="uk-container uk-margin-top" style="left: 50%; padding-top: 250px; transform: translate(-50% -50%);">
+    <div class="uk-container" style="left: 50%; padding-top: 250px; transform: translate(-50% -50%);">
     <div class="uk-card uk-body uk-card-default">
       <div class="uk-child-width-1-2@m" uk-grid>
         <div class="uk-card-body uk-card-default uk-position-center">
           <div class="uk-text-center">
-            <p>Akses ditolak. Anda akan diarahkan ke index.php dalam 4 detik.</p>
+            <p>Id tidak ditemukan. Anda akan diarahkan ke index.php dalam 4 detik.</p>
             <script>
               setTimeout(function(){
                 window.location.href = 'index.php';
@@ -57,11 +43,5 @@
       </div>
     </div>
     </div>
-  {% endfor %}
-  {% endfor %}
-
-  <script src="assets/libs/uikit/js/uikit.js"></script>
-  <script src="assets/libs/uikit/js/uikit-icons.js"></script>
-  <script src="assets/libs/lightbox/js/lightbox-plus-jquery.js"></script>
-</body>
-</html>
+  {% endif %}
+{% endblock %}

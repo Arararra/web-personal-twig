@@ -28,4 +28,8 @@
   	position: sticky; 
   	top: -400px;
   }
+
+  .width{
+    width: 200px;
+  }
 }
